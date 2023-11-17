@@ -32,6 +32,7 @@ import uz.itschool.mathquiz.navigation.NavGraph
  fun SplashScreen(navController: NavController){
         LaunchedEffect(key1 = true){
             delay(3000)
+            navController.navigate("intro_screen")
         }
           Box(modifier = Modifier
               .fillMaxSize()
