@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import uz.itschool.mathquiz.screen.IntroScreen
 import uz.itschool.mathquiz.screen.LevelsScreen
+import uz.itschool.mathquiz.screen.QuizScreen
 import uz.itschool.mathquiz.screen.SplashScreen
 
 @Composable
@@ -23,6 +24,9 @@ fun NavGraph (navController: NavHostController){
         }
         composable(route = Screens.Levels.route){
             LevelsScreen(navController)
+        }
+        composable(route = Screens.Quiz.route){
+            QuizScreen(navController)
         }
 
     }

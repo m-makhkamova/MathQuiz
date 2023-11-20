@@ -21,8 +21,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
@@ -44,19 +47,20 @@ fun IntroScreen(navController: NavController){
         .fillMaxSize()
         .background(Color(0xFF7646FE)), contentAlignment = Alignment.Center){
         Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+            Spacer(modifier = Modifier.height(150.dp))
             Image(modifier = Modifier.height(260.dp).width(260.dp), painter = painterResource(id = R.drawable.intro_img), contentDescription = "Intro")
             Spacer(modifier = Modifier.height(100.dp))
             Button(onClick = {
                 navController.navigate("levels_screen")
             }, modifier = Modifier
-                .width(230.dp)
+                .width(250.dp)
                 .height(45.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0XFFFF9051)), border = BorderStroke(2.dp, Color.White)
             ) {
-                Text(text = "New Game", fontSize = 16.sp)
+                Text(text = "New Game", fontSize = 18.sp)
             }
             Spacer(modifier = Modifier.height(18.dp))
             Button(onClick = {}, modifier = Modifier
-                .width(230.dp)
+                .width(250.dp)
                 .height(45.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFAA8DFF)), border = BorderStroke(2.dp, Color.White)){
                 Text(text = "Records", fontSize = 18.sp)
             }
